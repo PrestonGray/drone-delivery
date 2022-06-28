@@ -1,0 +1,30 @@
+cabal-version:       2.2
+name:                drone-delivery
+version:             0.1.0.0
+license-file:        LICENSE
+author:              Preston Gray
+maintainer:          prestongray97@gmail.com
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+
+common deps
+  ghc-options:
+    -Wall
+    -Werror
+    -Wincomplete-record-updates
+    -Wincomplete-uni-patterns
+    -O3
+  build-depends:    base
+
+library
+  import:           deps
+  -- exposed-modules:
+  hs-source-dirs:   src
+  default-language: Haskell2010
+
+executable drone-delivery
+  import:           deps
+  main-is:          Main.hs
+  build-depends:    base
+  hs-source-dirs:   app
+  default-language: Haskell2010
